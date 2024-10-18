@@ -1,5 +1,6 @@
 package com.example.joke_app.entity;
 
+import com.example.joke_app.dto.JokesDBDto;
 import com.example.joke_app.dto.JokesDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,6 +28,13 @@ public class RandomJoke {
     private String type;
 
     public RandomJoke(JokesDto jokeDto) {
+        this.id = jokeDto.getId();
+        this.setup = jokeDto.getSetup();
+        this.punchline = jokeDto.getPunchline();
+        this.type = jokeDto.getType();
+    }
+
+    public RandomJoke(JokesDBDto jokeDto) {
         this.id = jokeDto.getId();
         this.setup = jokeDto.getSetup();
         this.punchline = jokeDto.getPunchline();

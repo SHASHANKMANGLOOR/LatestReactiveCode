@@ -1,6 +1,8 @@
 package com.example.joke_app.test.java.com.example.joke_app.service;
 
+
 import com.example.joke_app.dto.JokesDto;
+import com.example.joke_app.dto.RandomJokeResponseDto;
 import com.example.joke_app.exception.GlobalExceptionHandler;
 import com.example.joke_app.exception.ServiceExcpetions;
 import com.example.joke_app.service.JokeClientService;
@@ -45,7 +47,7 @@ public class JokeServiceTest {
         when(jokeClientService.fetchRandomJokes(2)).thenReturn(Mono.just(batch2));
 
         // Act
-        Mono<List<JokesDto>> result = jokeService.getJokesAndsaveJokes(4); // Use block() to get the result
+        Mono<List<RandomJokeResponseDto>> result = jokeService.getJokesAndsaveJokes(4); // Use block() to get the result
 
         // Assert
         assertNotNull(result);
@@ -57,7 +59,7 @@ public class JokeServiceTest {
         when(jokeClientService.fetchRandomJokes(anyInt())).thenReturn(Mono.just(Arrays.asList()));
 
         // Act
-        List<JokesDto> result = jokeService.getJokesAndsaveJokes(0).block(); // Use block() to get the result
+        List<RandomJokeResponseDto> result = jokeService.getJokesAndsaveJokes(0).block(); // Use block() to get the result
 
         // Assert
         assertEquals(Arrays.asList(), result);
@@ -70,7 +72,7 @@ public class JokeServiceTest {
         when(jokeClientService.fetchRandomJokes(1)).thenReturn(Mono.just(batch));
 
         // Act
-        List<JokesDto> result = jokeService.getJokesAndsaveJokes(1).block(); // Use block() to get the result
+        List<RandomJokeResponseDto> result = jokeService.getJokesAndsaveJokes(1).block(); // Use block() to get the result
 
         // Assert
         assertNotNull(result);
@@ -86,7 +88,7 @@ public class JokeServiceTest {
         when(jokeClientService.fetchRandomJokes(2)).thenReturn(Mono.just(batch2));
 
         // Act
-        Mono<List<JokesDto>> result = jokeService.getJokesAndsaveJokes(4); // Use block() to get the result
+        Mono<List<RandomJokeResponseDto>> result = jokeService.getJokesAndsaveJokes(4); // Use block() to get the result
 
         assertNotNull(result);
     }
