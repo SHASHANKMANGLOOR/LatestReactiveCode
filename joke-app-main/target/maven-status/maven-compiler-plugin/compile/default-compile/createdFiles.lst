@@ -1,0 +1,13 @@
+com\example\joke_app\service\RestClientCallService.class
+com\example\joke_app\entity\RandomJoke.class
+com\example\joke_app\errorConstants\ErrorConstants.class
+com\example\joke_app\exception\ServiceExcpetion.class
+com\example\joke_app\dto\JokesDto.class
+com\example\joke_app\service\JokesService.class
+com\example\joke_app\restController\JokesRestController.class
+com\example\joke_app\dto\JokesResponseDTO.class
+com\example\joke_app\RandomJokeAppApplication.class
+com\example\joke_app\exception\GlobalExceptionHandler.class
+com\example\joke_app\exception\NoContentException.class
+com\example\joke_app\config\RestConfig.class
+com\example\joke_app\repository\JokesRepository.class
